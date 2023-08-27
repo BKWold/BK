@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>กิจกรรมทายผลบอล</title>
+   <style>
+    @import
+     url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+ * {font-family: 'Kanit';
+    }
+   body {
+      /* background-color: #F2F2F2; */
+      background-image: linear-gradient(35deg, rgba(2,0,36,1) 0%, rgba(230,23,156,1) 48%, rgba(255,0,121,1) 100%);
+      margin: 20px;
+      padding: 20px;
+    }
+   h1 {
+      color: #000;
+      text-align: center;}
+      
+   h2 {
+      color: #000;
+      text-align: center;}
+      
+      img {
+          border-radius: 8px;
+      }
+   
+   h3 {
+      color: #000;
+      text-align: center
+      ;}  
+
+   h4 {
+      color: #000;
+      text-align: lief 
+      ;}
+
+  
+  form {
+      max-width: 400px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+   
+   label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #00000;
+    }
+    
+    label1 {
+      display: block;
+      font-weight: bold;
+      font-size: 18px;
+      margin-top: 20px;
+      margin-bottom: 5px;
+      color: #00000;
+    }
+    
+   input[type="text"],
+   input[type="number"],
+    textarea {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+    }
+    
+    <style>
+    
+    textarea {
+      resize: vertical;
+      height: 80px;
+    }
+    
+    select {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+      }
+    
+   input[type="submit"] {
+      background-color: #ff0079;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 25px
+    }
+    
+      
+  </style>
+ </head>
+
+   <body>
+   <center><img src="https://www.finfin.bet/build/web/ezc-fun-fun/img/logo.png"  width="201px" height="94px"></center>
+   <header><h1>กิจกรรมทายผลบอล</h1></header>
+   <h3><p align=center>เงือนไขในการเข้าร่วมกิจกรรม</p></h3>
+      <h4><p align=center><TABLE border=0 align=center><TBODY><TR>            
+        <TD>1.ต้องมียอดฝาก 100 บาทขึ้นไป ภายในวันที่มีกิจกรรม<br>
+        2.ปิดรับทายผลก่อนฟุตบอลเตะ 30 นาที<br>
+        3.กรอกข้อมูลให้ครบถ้วนหากไม่ครบทางเราจะถือว่าเป็นโมฆะ<br>
+        4.หากจบสกอร์เสมอ ไม่ถือว่ากิจกรรมเป็นโมฆะ</TD></TR>
+</TBODY>
+</TABLE></p></h4>
+    <center><img src="https://cdn.pic.in.th/file/picinth/messageImage_1692796470414.jpeg"  width="430px" height="120px" ></center>
+  <h2><label for="date" name="date" id="date">ประจำวันที่ 26 สิงหาคม 2566</label></h2>
+<h1><label for="date" name="date" id="date">นิวคาสเซิ่ล พบกับ ลิเวอร์พูล</label></h1>
+    <form id="sheet1" onsubmit="handleFormSubmit(this)">
+      <label for="numberCall">เบอร์โทรศัพท์:</label>     
+    <input type="text" id="numberCall" name="numberCall"  required>
+    
+    <label for="teamShootfrist">ทีมที่ทำประตูแรก:</label>
+    
+    <select id="teamShootfrist" name="teamShootfrist" required >
+      <option value="" >เลือก.. </option>
+      <option value="team1"> Man-U </option>
+      <option value="team2">LiverPool</option>
+    </select>
+    
+    <label for="winningTeam">ทีมที่ชนะ:</label>
+    <select id="winningTeam" name="winningTeam"  required >
+      <option value="" >เลือก.. </option>
+      <option value="team1">Man-U</option>
+      <option value="team2">LiverPool</option>
+      </select>
+     
+     <label1 for="scoreEnd">สกอร์จบเกมส์:</label1>
+      <label for="team1">Man-u</label>
+      <input type="number" placeholder="จำนวนประตู" id="team1" name="team1" min="0" max="99" required>
+      
+      <label for="team2">Liverpool</label>
+      <input type="number" placeholder="จำนวนประตู" id="team2" name="team2" min="0" max="99" required>
+      
+      <input type="submit" name="submit" value="ส่งผล">
+    </form>  
+    <br id="output"></br>
+  <script>  
+    function preventFormSubmit() {
+      var forms = document.querySelectorAll('form');
+      for (var i = 0; i < forms.length; i++) {
+        forms[i].addEventListener('submit', function(event) {
+          event.preventDefault();
+        });
+      }
+    }
+
+ window.addEventListener('load', preventFormSubmit);
+    
+    function handleFormSubmit(form) {
+              Swal.fire({ title: 'รอสักครู่..' });
+                Swal.showLoading();
+                google.script.run.withSuccessHandler(() => {
+                    Swal.fire({
+                        position: "center",
+                        icon: "success",
+                        title: "บันทึกข้อมูลเรียบร้อย",
+                        showConfirmButton: false,
+                        timer: 1500,
+                    });
+      }).processForm(form);
+      document.getElementById('sheet1').reset();
+    }
+  </script>
+ <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+</html>
